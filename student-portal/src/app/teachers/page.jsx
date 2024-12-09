@@ -53,7 +53,7 @@ const Page = () => {
                 className={"mb-10"}></DialogueBox>
 
             <Table>
-                <TableCaption>A list of your recent invoices.</TableCaption>
+                <TableCaption>A list of teachers.</TableCaption>
                 <TableHeader>
                     <TableRow>
                         <TableHead className="w-[100px]">Id</TableHead>

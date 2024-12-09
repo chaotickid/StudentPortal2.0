@@ -70,18 +70,24 @@ const otherNavList = [
         id: 1,
         name: "Profile",
         url: "/profile",
+        dialogueTitle: "",
+        dialogDescription: "",
         icon: <UserRoundPen/>
     },
     {
         id: 2,
         name: "Setting",
         url: "/setting",
+        dialogueTitle: "",
+        dialogDescription: "",
         icon: <SlidersHorizontal/>
     },
     {
         id: 3,
         name: "Logout",
-        url: "/Logout",
+        url: "/logout",
+        dialogueTitle: "",
+        dialogDescription: "",
         icon: <LogOut/>
     }
 ]
@@ -124,17 +130,30 @@ const NavBar = () => {
                 {otherNavList.map((item, index) => {
                     return (
                         <div key={index} className={"mt-5 text-gray-400"}>
-                            <Link href={item.url}>
-                                <div
-                                    className="flex items-center gap-5 cursor-pointer hover:text-gray-900 transition ease-in-out duration-200">
-                                    <h1>{item.icon}</h1>
-                                    <h1>{item.name}</h1>
+                            {/*<Link href={item.url}>*/}
+                                {/*<div*/}
+                                {/*    className="flex items-center gap-5 cursor-pointer hover:text-gray-900 transition ease-in-out duration-200">*/}
+                                {/*    <h1>{item.icon}</h1>*/}
+                                {/*    <h1>{item.name}</h1>*/}
 
+                                {/*</div>*/}
+                                <div
+                                    className={"flex items-center gap-5 cursor-pointer hover:text-gray-900 transition ease-in-out duration-200 mt-5 text-gray-400"}>
+                                    <h1>{item.icon}</h1>
+                                    <DialogueBox icon={<h1>{item.name}</h1>} DialogueTitle={item.dialogueTitle}
+                                                 DialogDescription={item.dialogDescription}></DialogueBox>
                                 </div>
-                            </Link>
+                            {/*</Link>*/}
                         </div>
                     )
                 })}
+
+                {/*<div*/}
+                {/*    className={"flex items-center gap-5 cursor-pointer hover:text-gray-900 transition ease-in-out duration-200 mt-5 text-gray-400"}>*/}
+                {/*    <h1><LogOut/></h1>*/}
+                {/*    <DialogueBox icon={<h1>Logout</h1>} DialogueTitle={"Want to logout ?"}*/}
+                {/*                 DialogDescription={"Once logged out need to sign in again, save changes before log out"}></DialogueBox>*/}
+                {/*</div>*/}
 
 
             </div>
