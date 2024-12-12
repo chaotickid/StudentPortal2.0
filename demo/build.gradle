@@ -38,6 +38,10 @@ dependencies {
 	implementation 'org.hibernate:hibernate-jpamodelgen:6.4.4.Final'
 	implementation 'org.xerial:sqlite-jdbc:3.44.1.0'
 	implementation 'com.zaxxer:HikariCP:5.0.1'
+	implementation 'org.reflections:reflections:0.10.2'
+
+	// Spring Boot starter for validation (includes Hibernate Validator)
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
 
 	// Utilities
 	implementation 'com.google.guava:guava:31.1-jre'

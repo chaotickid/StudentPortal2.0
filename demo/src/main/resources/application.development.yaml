@@ -5,3 +5,9 @@ http:
 
 app:
   development: true
+spring:
+  jpa:
+    properties:
+      hibernate:
+        dialect: com.mavenir.vmp.core.jpa.SQLiteDialect
+
