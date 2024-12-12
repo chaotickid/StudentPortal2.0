@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Configuration;
 import com.mavenir.vmp.config.EnvironmentProperties.DataSourceProperties;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
+import org.springframework.web.client.RestTemplate;
 
 /**
  * The Class DataSourceConfig.
@@ -37,6 +38,11 @@ public class DataSourceConfig {
 		config.setIdleTimeout(60000);
 		config.setConnectionTestQuery("SELECT 1");
 		return new HikariDataSource(config);
+	}
+
+	@Bean
+	public RestTemplate returnRest(){
+		return new RestTemplate();
 	}
 
 }
