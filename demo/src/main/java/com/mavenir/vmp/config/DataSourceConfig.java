@@ -4,6 +4,8 @@
 package com.mavenir.vmp.config;
 
 import javax.sql.DataSource;
+
+import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import com.mavenir.vmp.config.EnvironmentProperties.DataSourceProperties;
@@ -43,6 +45,11 @@ public class DataSourceConfig {
 	@Bean
 	public RestTemplate returnRest(){
 		return new RestTemplate();
+	}
+
+	@Bean
+	public ModelMapper returnModelMapper(){
+		return new ModelMapper();
 	}
 
 }
