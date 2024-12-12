@@ -26,7 +26,7 @@
 //import com.google.common.base.Throwables;
 //
 ///**
-// * Configuration for REST clients.
+// * Configuration for REST clients
 // */
 //@Configuration
 //public class RestConfig {
