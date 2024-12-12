@@ -1,0 +1,7 @@
+http:
+  mappers:
+    json-pretty-print: true
+    json-sort-keys: true
+
+app:
+  development: true

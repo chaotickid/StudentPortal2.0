@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: vmp
+
+  jmx:
+    enabled: false
+
+  jpa:
+    show-sql: false
+
+    database-platform: com.mavenir.vmp.core.jpa.SQLiteDialect
+
+    hibernate:
+      naming-strategy: com.mavenir.vmp.core.jpa.QuotingNamingStrategy
+      ddl-auto: none
+
+    properties:
+      jadira.usertype.autoRegisterUserTypes: true
+      jadira.usertype.useJdbc42Apis: false
+
+  profiles:
+    active: development
+
