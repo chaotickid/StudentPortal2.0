@@ -7,6 +7,7 @@ import java.io.UnsupportedEncodingException;
 import java.net.URI;
 import java.util.Arrays;
 
+import org.apache.commons.codec.binary.Base64;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +15,6 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
-//import org.springframework.util.Base64Utils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.ResourceAccessException;
@@ -46,11 +46,11 @@ public class TimeController {
 		URI targetUrl = uriComponentsBuilder.build().toUri();
 		HttpHeaders headers = new HttpHeaders();
 		headers.add("Content-Type", MediaType.TEXT_PLAIN_VALUE);
-//		try {
-//			headers.add("Authorization", "Basic " + Base64Utils.encode(environment.getVmpUser().getBytes("UTF-8")));
-//		} catch (UnsupportedEncodingException e) {
-//			logger.error("Unsupported charset UTF-8 ", e);
-//		}
+		try {
+			headers.add("Authorization", "Basic " + Arrays.toString(Base64.encodeBase64(environment.getVmpUser().getBytes("UTF-8"))));
+		} catch (UnsupportedEncodingException e) {
+			logger.error("Unsupported charset UTF-8 ", e);
+		}
 		headers.setAccept(Arrays.asList(MediaType.TEXT_PLAIN));
 		HttpEntity<String> request = new HttpEntity<String>("", headers);
 		try {
