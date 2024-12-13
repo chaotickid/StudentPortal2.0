@@ -24,7 +24,7 @@ public class NoOpLogoutHandler extends SecurityContextLogoutHandler {
 
 	@Override
 	public void logout(HttpServletRequest request, HttpServletResponse response, Authentication authentication) {
-		//counter.decrementCounter();
+		counter.decrementCounter();
 		super.logout(request, response, authentication);
 	}
 

@@ -67,7 +67,33 @@ public class UserCounterService {
 		incrementCounter(userService.getCurrentUserRole());
 	}
 
+	public void decrementCounter() {
+		decrementCounter(userService.getCurrentUserRole());
+	}
+
 	private void incrementCounter(Role role) {
+		if (role == null) {
+			return;
+		}
+		switch (role) {
+			case ROLE_ADMIN:
+				adminCounter.increment();
+				break;
+			case ROLE_ADVANCED:
+				advanceCounter.increment();
+				break;
+			case ROLE_INTERMEDIATE:
+				intermediateCounter.increment();
+				break;
+			case ROLE_SIMPLE:
+				simpleCounter.increment();
+				break;
+			default:
+				break;
+		}
+	}
+
+	private void decrementCounter(Role role) {
 		if (role == null) {
 			return;
 		}

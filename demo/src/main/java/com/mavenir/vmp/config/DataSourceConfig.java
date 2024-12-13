@@ -29,7 +29,7 @@ public class DataSourceConfig {
 	 */
 	@Bean
 	public DataSource dataSource(EnvironmentProperties prop) {
-		//DataSourceProperties db = prop.getDatabase();
+		DataSourceProperties db = prop.getDatabase();
 		HikariConfig config = new HikariConfig();
 		config.setDriverClassName("org.sqlite.JDBC");
 		config.setJdbcUrl("jdbc:sqlite:C:/database/test.db");

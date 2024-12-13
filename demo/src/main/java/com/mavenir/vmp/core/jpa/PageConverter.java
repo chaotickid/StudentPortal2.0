@@ -4,12 +4,14 @@ import java.lang.reflect.ParameterizedType;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.modelmapper.internal.typetools.TypeResolver;
 import org.modelmapper.internal.util.Types;
 import org.modelmapper.spi.ConditionalConverter;
 import org.modelmapper.spi.Mapping;
 import org.modelmapper.spi.MappingContext;
 import org.modelmapper.spi.PropertyInfo;
 import org.modelmapper.spi.PropertyMapping;
+import org.springframework.core.ResolvableType;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
@@ -62,17 +64,37 @@ public class PageConverter implements ConditionalConverter<Page<Object>, Page<Ob
 	 *
 	 * @param context mapping context
 	 */
+	//TODO:: alternate approach used
+	/*private Class<?> getElementType(MappingContext<Page<Object>, Page<Object>> context) {
+		Mapping mapping = context.getMapping();
+
+		if (mapping instanceof PropertyMapping) {
+			PropertyInfo info = ((PropertyMapping) mapping).getLastDestinationProperty();
+			Class<?> type = TypeResolver.resolveArgument(info.getGenericType(), info.getInitialType());
+//			return null;
+			return type == Unknown.class ? Object.class : type;
+		} else if (context.getGenericDestinationType() instanceof ParameterizedType) {
+			ParameterizedType type = (ParameterizedType) context.getGenericDestinationType();
+			return Types.rawTypeFor(type.getActualTypeArguments()[0]);
+		} else {
+			return Object.class;
+		}
+	}*/
 	private Class<?> getElementType(MappingContext<Page<Object>, Page<Object>> context) {
 		Mapping mapping = context.getMapping();
 
 		if (mapping instanceof PropertyMapping) {
 			PropertyInfo info = ((PropertyMapping) mapping).getLastDestinationProperty();
-			//Class<?> type = TypeResolver.resolveArgument(info.getGenericType(), info.getInitialType());
-			return null;
-			//return type == Unknown.class ? Object.class : type;
+
+			// Resolve the generic argument using ResolvableType
+			ResolvableType resolvableType = ResolvableType.forType(info.getGenericType());
+			Class<?> resolvedType = resolvableType.resolve();
+
+			return resolvedType == TypeResolver.Unknown.class ? Object.class : resolvedType;
 		} else if (context.getGenericDestinationType() instanceof ParameterizedType) {
-			ParameterizedType type = (ParameterizedType) context.getGenericDestinationType();
-			return Types.rawTypeFor(type.getActualTypeArguments()[0]);
+			// Handle ParameterizedType cases with ResolvableType
+			ResolvableType resolvableType = ResolvableType.forType(context.getGenericDestinationType());
+			return resolvableType.getGenerics()[0].resolve(Object.class);
 		} else {
 			return Object.class;
 		}

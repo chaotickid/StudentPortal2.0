@@ -22,6 +22,13 @@ issues:
 fixes:
 -tried to fix security config, need to test this one
 
+--SPRING BOOT WORKING--
+fixed issues:
+1] DataSourceConfig.java just rollback
+2] NoOpLogoutHandler.java decrement counter implemented need to review this one
+3] PageConverter.java alternate approach used ResolvableType need to test this one
+4] UserCounterService.java implemented private void decrementCounter Role role
+
 
 
 
@@ -29,11 +36,11 @@ fixes:
 -----------------------------------overall issues in the files:--------------------------------------------
 
 
-DataSourceConfig
+DataSourceConfig ->  [ FIXED JUST DO ROLL BACK BEFORE PUSHING ]
 
-EnvironmentProperties-> getting null pointer exception
+EnvironmentProperties-> getting null pointer exception -> [ FIXED JUST DO ROLL BACK BEFORE PUSHING ]
 
-MapperConfig ->
+MapperConfig -> [ FIXED ]
 --SPRING BOOT WORKING--
 fixed:
 - removed modelmapper bean from DataSourceConfig.java
@@ -41,13 +48,13 @@ fixed:
 
 NoOpLogoutHandler->//counter.decrementCounter();
 
-PageConverter-> commneted things
+PageConverter-> commented things [ FIXED JUST NEED TO TEST THIS ONE ]
 
 RequestDataRepository-> major issue is here
 
 RestConfig-> need to review, added SimpleClientHttpRequestFactory
 
-SecurityConfig-> still need to review the changes
+SecurityConfig-> still need to review the changes [ MAY BE FIXED ]
 
 SQLiteDialect
 
