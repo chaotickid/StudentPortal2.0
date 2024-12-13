@@ -333,7 +333,8 @@ public class EnvironmentProperties {
 	 * @return the url value.
 	 */
 	public String getUrl() {
-		return url;
+		return "test";//need to test
+		//return url;
 	}
 
 	/**

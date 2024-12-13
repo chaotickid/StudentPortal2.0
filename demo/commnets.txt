@@ -12,3 +12,8 @@
 
 --SPRING BOOT WORKING--
 - fixed issue for SQLiteLimitHandler.java need to review
+
+--SPRING BOOT WORKING--
+issues:
+- commented package com.mavenir.vmp.mailbox.storage.RequestDataRepository file
+- commented repository calls in MailboxStorageController class
