@@ -42,9 +42,4 @@ public class DataSourceConfig {
 		return new HikariDataSource(config);
 	}
 
-	@Bean
-	public ModelMapper returnModelMapper(){
-		return new ModelMapper();
-	}
-
 }

@@ -1,5 +1,6 @@
 package com.mavenir.vmp.core;
 
+import com.mavenir.vmp.security.crypto.PasswordMap;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.PropertyMap;
 import org.modelmapper.convention.MatchingStrategies;
@@ -22,19 +23,19 @@ public class MapperConfig {
 	 * @param reflections Reflections
 	 * @return model mapper
 	 */
-//	@Bean
-//	public ModelMapper modelMapper(PasswordMap passwordMap) {
-//		ModelMapper mapper = new ModelMapper();
-//		mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
-//		mapper.addMappings(new PasswordMap.UserMap());
-//		mapper.addMappings(passwordMap.new UserModelMap());
-//		mapper.addMappings(passwordMap.new EditUserModelMap());
-//		mapper.addMappings(passwordMap.new PasswordUserMap());
-//		mapper.getConfiguration().getConverters().add(0, new PageConverter());
-//		mapper.addMappings(new DropdownMapToInteger());
-//		mapper.addMappings(new DropdownMapToString());
-//		return mapper;
-//	}
+	@Bean
+	public ModelMapper modelMapper(PasswordMap passwordMap) {
+		ModelMapper mapper = new ModelMapper();
+		mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
+		mapper.addMappings(new PasswordMap.UserMap());
+		mapper.addMappings(passwordMap.new UserModelMap());
+		mapper.addMappings(passwordMap.new EditUserModelMap());
+		mapper.addMappings(passwordMap.new PasswordUserMap());
+		mapper.getConfiguration().getConverters().add(0, new PageConverter());
+		mapper.addMappings(new DropdownMapToInteger());
+		mapper.addMappings(new DropdownMapToString());
+		return mapper;
+	}
 
 	@Service
 	private static class DropdownMapToInteger extends PropertyMap<DropdownElement, Integer> {
