@@ -6,3 +6,6 @@
 --SPRING BOOT WORKING--
 - uncommented RestConfig.java, and kept simple RestTemple using SimpleClientHttpRequestFactory
 - removed rest template bean from DataSourceConfig.java
+
+--SPRING BOOT WORKING--
+- fixed issue for WebConfig.java
