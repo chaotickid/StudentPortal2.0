@@ -17,3 +17,37 @@
 issues:
 - commented package com.mavenir.vmp.mailbox.storage.RequestDataRepository file
 - commented repository calls in MailboxStorageController class
+
+
+
+
+-----------------------------------overall issues in the files:--------------------------------------------
+
+
+DataSourceConfig
+
+EnvironmentProperties-> getting null pointer exception
+
+MapperConfig ->
+--SPRING BOOT WORKING--
+fixed:
+- removed modelmapper bean from DataSourceConfig.java
+- uncommented changed in MapperConfig.java file
+
+NoOpLogoutHandler->//counter.decrementCounter();
+
+PageConverter-> commneted things
+
+RequestDataRepository-> major issue is here
+
+RestConfig-> need to review, added SimpleClientHttpRequestFactory
+
+SecurityConfig-> still need to review the changes
+
+SQLiteDialect
+
+SQLiteLimitHandler
+
+UserCounterService
+
+WebConfig-> need to review
