@@ -41,9 +41,9 @@ public class MailboxStorageController {
 	@Autowired
 	private DataSource dataSource;
 	
-//	/** The repository. */
-//	@Autowired
-//	private RequestDataRepository repository;
+	/** The repository. */
+	@Autowired
+	private RequestDataRepository repository;
 
 	/**
 	 * Returns the valid request IDs for that request type.
@@ -54,25 +54,24 @@ public class MailboxStorageController {
 	@PreAuthorize("hasRole('ROLE_ADVANCED')")
 	@RequestMapping(value = "{type}", method = RequestMethod.GET)
 	public List<RequestDataPart> getStoredId(@PathVariable String type) {
-//		List<RequestDataPart> dataParts = new ArrayList<>();
-//
-//		// Create Pageable object with sorting by expiryTime
-//		Pageable pageable = PageRequest.of(0, environmentProperties.getStatusLimit(), Sort.Direction.DESC, "expiryTime");
-//
-//		// Fetch paginated data from the repository
-//		Page<RequestData> pageResult = repository.findAllByType(type, pageable);
-//
-//		// Delete expired entries after retrieving the data
-//		repository.deleteExpiredByType(type);
-//
-//		// Process each entry from the paginated result
-//		for (RequestData requestData : pageResult.getContent()) {
-//			RequestDataPart dataPart = new RequestDataPart(requestData.getId(), requestData.getNode());
-//			dataParts.add(dataPart);
-//		}
-//
-//		// Return the processed list
-		return null;
+		List<RequestDataPart> dataParts = new ArrayList<>();
+
+		// Create Pageable object with sorting by expiryTime
+		Pageable pageable = PageRequest.of(0, environmentProperties.getStatusLimit(), Sort.Direction.DESC, "expiryTime");
+
+		// Fetch paginated data from the repository
+		Page<RequestData> pageResult = repository.findAllByType(type, pageable);
+
+		// Delete expired entries after retrieving the data
+		repository.deleteExpiredByType(type);
+
+		// Process each entry from the paginated result
+		for (RequestData requestData : pageResult.getContent()) {
+			RequestDataPart dataPart = new RequestDataPart(requestData.getId(), requestData.getNode());
+			dataParts.add(dataPart);
+		}
+		// Return the processed list
+		return dataParts;
 	}
 	
 	/**
@@ -88,7 +87,7 @@ public class MailboxStorageController {
 		RequestData data = 
 				new RequestData(type, id, node,
 						new DateTime(System.currentTimeMillis() + (environmentProperties.getCacheTTL() * (long)(24 * 60 * 60 * 1000))));
-		//repository.saveAndFlush(data);
+		repository.saveAndFlush(data);
 	}
 
 }

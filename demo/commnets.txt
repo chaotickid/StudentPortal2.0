@@ -46,11 +46,11 @@ fixed:
 - removed modelmapper bean from DataSourceConfig.java
 - uncommented changed in MapperConfig.java file
 
-NoOpLogoutHandler->//counter.decrementCounter();
+NoOpLogoutHandler->//counter.decrementCounter(); [ FIXED JUST NEED TO TEST THIS ONE ]
 
 PageConverter-> commented things [ FIXED JUST NEED TO TEST THIS ONE ]
 
-RequestDataRepository-> major issue is here
+RequestDataRepository and MailboxStorageController-> [ FIXED JUST NEED TO TEST THIS ONE ]
 
 RestConfig-> need to review, added SimpleClientHttpRequestFactory
 
