@@ -43,11 +43,6 @@ public class DataSourceConfig {
 	}
 
 	@Bean
-	public RestTemplate returnRest(){
-		return new RestTemplate();
-	}
-
-	@Bean
 	public ModelMapper returnModelMapper(){
 		return new ModelMapper();
 	}
