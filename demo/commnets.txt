@@ -18,6 +18,11 @@ issues:
 - commented package com.mavenir.vmp.mailbox.storage.RequestDataRepository file
 - commented repository calls in MailboxStorageController class
 
+--SPRING BOOT WORKING--
+fixes:
+-tried to fix security config, need to test this one
+
+
 
 
 

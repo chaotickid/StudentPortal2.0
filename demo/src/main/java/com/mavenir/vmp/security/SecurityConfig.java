@@ -39,6 +39,9 @@ public class SecurityConfig {
     @Autowired
     private UserDetailsFactory userDetailsFactory;
 
+    @Autowired
+    private AuthenticationConfiguration authConfig;
+
     @Bean
     public DaoAuthenticationProvider authenticationProvider() {
         DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
@@ -77,9 +80,9 @@ public class SecurityConfig {
                         .logoutSuccessHandler(new NoOpLogoutSuccessHandler())
                         .deleteCookies("remember-me")
                 )
-                .authenticationProvider(authenticationProvider()); // Add the custom authentication provider
-                //.addFilterBefore(createAuthenticationFilter(authenticationManager()), UsernamePasswordAuthenticationFilter.class);
-
+                .authenticationProvider(authenticationProvider())// Add the custom authentication provider
+                .addFilterBefore(createAuthenticationFilter(authenticationManager(authConfig)),
+                        UsernamePasswordAuthenticationFilter.class);
         return http.build();
     }
 
