@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 import com.mavenir.vmp.rest.RestException;
-//import com.mavenir.vmp.security.handler.UserLoggedOutException;
+import com.mavenir.vmp.security.handler.UserLoggedOutException;
 
 /**
  * Controller advices.
@@ -65,12 +65,12 @@ public class ControllerAdvices {
 		LOG.error("Not found: {}", exception.getMessage());
 	}
 
-//	@ExceptionHandler(UserLoggedOutException.class)
-//	@ResponseStatus(HttpStatus.FORBIDDEN)
-//	@ResponseBody
-//	public void handleUserLoggedOut(UserLoggedOutException exception) {
-//		LOG.error("Access denied: {}", exception.getMessage());
-//	}
+	@ExceptionHandler(UserLoggedOutException.class)
+	@ResponseStatus(HttpStatus.FORBIDDEN)
+	@ResponseBody
+	public void handleUserLoggedOut(UserLoggedOutException exception) {
+		LOG.error("Access denied: {}", exception.getMessage());
+	}
 
 	@ExceptionHandler(RestException.class)
 	@ResponseStatus(HttpStatus.METHOD_NOT_ALLOWED)
