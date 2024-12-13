@@ -61,10 +61,10 @@ public class AboutController {
 		AboutVM result = new AboutVM();
 
 		if (userService.hasCurrentRole(Role.ROLE_ADMIN)) {
-//			result.setAdminCount(userCounterService.getAdminCount());
-//			result.setSimpleCount(userCounterService.getSimpleCount());
-//			result.setSimpleCount(userCounterService.getIntermediateCount());
-//			result.setAdvanceCount(userCounterService.getAdvanceCount());
+			result.setAdminCount(String.valueOf(userCounterService.getAdminCount()));
+			result.setSimpleCount(String.valueOf(userCounterService.getSimpleCount()));
+			result.setSimpleCount(String.valueOf(userCounterService.getIntermediateCount()));
+			result.setAdvanceCount(String.valueOf(userCounterService.getAdvanceCount()));
 		}
 
 		result.setUptime(String.valueOf(ManagementFactory.getRuntimeMXBean().getUptime()));
