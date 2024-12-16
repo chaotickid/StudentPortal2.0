@@ -35,7 +35,7 @@ const mainNavList = [
     {
         id: 3,
         name: "Student",
-        url: "/student",
+        url: "/students",
         icon: <UserRoundCog/>
     },
     {
@@ -52,8 +52,8 @@ const mainNavList = [
     },
     {
         id: 6,
-        name: "Lessons",
-        url: "/lessons",
+        name: "Notes",
+        url: "/notes",
         icon: <BookOpenCheck/>
     },
     {
