@@ -8,7 +8,7 @@ import {
     HandCoins,
     HomeIcon,
     LogOut, MessageCircle,
-    Presentation,
+    Presentation, Settings2Icon,
     SlidersHorizontal, SpeakerIcon,
     UserIcon,
     UserRoundCog,
@@ -16,6 +16,19 @@ import {
 } from "lucide-react";
 import {Input} from "@/components/ui/input";
 import DialogueBox from "@/app/_components/DialogueBox";
+import { IoHomeOutline } from "react-icons/io5";
+import { FaChalkboardTeacher } from "react-icons/fa";
+import { PiStudentFill } from "react-icons/pi";
+import { RiParentLine } from "react-icons/ri";
+import { GrDocumentNotes } from "react-icons/gr";
+import { FaAmazonPay } from "react-icons/fa";
+import { SiGoogleclassroom } from "react-icons/si";
+import { ImProfile } from "react-icons/im";
+import { RiListSettingsFill } from "react-icons/ri";
+import { LuLogOut } from "react-icons/lu";
+import { SiGooglemessages } from "react-icons/si";
+import { IoIosNotifications } from "react-icons/io";
+
 
 
 const mainNavList = [
@@ -24,43 +37,43 @@ const mainNavList = [
         id: 1,
         name: "Home",
         url: "/",
-        icon: <HomeIcon/>,
+        icon: <IoHomeOutline />
     },
     {
         id: 2,
         name: "Teacher",
         url: "/teachers",
-        icon: <UserIcon></UserIcon>
+        icon: <FaChalkboardTeacher />
     },
     {
         id: 3,
         name: "Student",
         url: "/students",
-        icon: <UserRoundCog/>
+        icon: <PiStudentFill />
     },
     {
         id: 4,
         name: "Parents",
         url: "/parents",
-        icon: <HomeIcon/>,
+        icon: <RiParentLine />
     },
     {
         id: 5,
         name: "Classes",
         url: "/classes",
-        icon: <Presentation/>
+        icon: <SiGoogleclassroom />
     },
     {
         id: 6,
         name: "Notes",
         url: "/notes",
-        icon: <BookOpenCheck/>
+        icon: <GrDocumentNotes />
     },
     {
         id: 7,
         name: "Payments",
         url: "/payments",
-        icon: <HandCoins/>
+        icon:<FaAmazonPay />
     }
 ]
 
@@ -72,7 +85,7 @@ const otherNavList = [
         url: "/profile",
         dialogueTitle: "",
         dialogDescription: "",
-        icon: <UserRoundPen/>
+        icon: <ImProfile />
     },
     {
         id: 2,
@@ -80,7 +93,7 @@ const otherNavList = [
         url: "/setting",
         dialogueTitle: "",
         dialogDescription: "",
-        icon: <SlidersHorizontal/>
+        icon: <RiListSettingsFill />
     },
     {
         id: 3,
@@ -88,7 +101,7 @@ const otherNavList = [
         url: "/logout",
         dialogueTitle: "",
         dialogDescription: "",
-        icon: <LogOut/>
+        icon: <LuLogOut />
     }
 ]
 
@@ -108,16 +121,16 @@ const NavBar = () => {
                     <h1 className={"text-gray-400 text-3xl"}>StudentPortal</h1>
                 </div>
 
-                <h1 className={"text-gray-400 mt-5"}>MENU</h1>
+                <h1 className={"text-gray-500 mt-5"}>MENU</h1>
 
 
                 {mainNavList.map((item, index) => {
                     return (
-                        <div key={index} className={"mt-5 text-gray-400"}>
+                        <div key={index} className={"mt-5 text-gray-500"}>
                             <Link href={item.url}>
                                 <div
                                     className="flex items-center gap-5 cursor-pointer hover:text-gray-900 transition ease-in-out duration-200">
-                                    <h1>{item.icon}</h1>
+                                    <h1 className={"text-3xl"}>{item.icon}</h1>
                                     <h1>{item.name}</h1>
                                 </div>
                             </Link>
@@ -125,52 +138,38 @@ const NavBar = () => {
                     )
                 })}
 
-                <h1 className={"text-gray-400 mt-5"}>OTHER</h1>
+                <h1 className={"text-gray-500 mt-5"}>OTHER</h1>
 
                 {otherNavList.map((item, index) => {
                     return (
-                        <div key={index} className={"mt-5 text-gray-400"}>
-                            {/*<Link href={item.url}>*/}
-                                {/*<div*/}
-                                {/*    className="flex items-center gap-5 cursor-pointer hover:text-gray-900 transition ease-in-out duration-200">*/}
-                                {/*    <h1>{item.icon}</h1>*/}
-                                {/*    <h1>{item.name}</h1>*/}
+                        <div key={index} className={"mt-5 text-gray-500"}>
+                            <div
+                                className={"flex items-center gap-5 cursor-pointer hover:text-gray-900 transition ease-in-out duration-200 mt-5 text-gray-500"}>
+                                <h1 className={"text-3xl"}>{item.icon}</h1>
+                                <DialogueBox icon={<h1>{item.name}</h1>} DialogueTitle={item.dialogueTitle}
+                                             DialogDescription={item.dialogDescription}></DialogueBox>
+                            </div>
 
-                                {/*</div>*/}
-                                <div
-                                    className={"flex items-center gap-5 cursor-pointer hover:text-gray-900 transition ease-in-out duration-200 mt-5 text-gray-400"}>
-                                    <h1>{item.icon}</h1>
-                                    <DialogueBox icon={<h1>{item.name}</h1>} DialogueTitle={item.dialogueTitle}
-                                                 DialogDescription={item.dialogDescription}></DialogueBox>
-                                </div>
-                            {/*</Link>*/}
                         </div>
                     )
                 })}
-
-                {/*<div*/}
-                {/*    className={"flex items-center gap-5 cursor-pointer hover:text-gray-900 transition ease-in-out duration-200 mt-5 text-gray-400"}>*/}
-                {/*    <h1><LogOut/></h1>*/}
-                {/*    <DialogueBox icon={<h1>Logout</h1>} DialogueTitle={"Want to logout ?"}*/}
-                {/*                 DialogDescription={"Once logged out need to sign in again, save changes before log out"}></DialogueBox>*/}
-                {/*</div>*/}
-
-
             </div>
 
             <div className={"ml-[15%] p-5"}>
-
-                <div className={"flex items-center gap-5 cursor-pointer hover:text-gray-900 transition ease-in-out duration-200"}>
-                    <Input type="text" placeholder="Search" />
-
+                <div
+                    className={"flex items-center gap-5 cursor-pointer hover:text-gray-900 transition ease-in-out duration-200"}>
+                    <Input type="text" placeholder="Search"/>
                     <DialogueBox
-                        icon={<MessageCircle></MessageCircle>}
+                        icon={<h1 className={"text-3xl"}><SiGooglemessages></SiGooglemessages></h1>}
+                        DialogueTitle={"Messages"}
+                        DialogDescription={"See messages here"}
+                        className={"mb-10"}></DialogueBox>
+                    <DialogueBox
+                        icon={<h1 className={"text-3xl"}><IoIosNotifications></IoIosNotifications></h1>}
                         DialogueTitle={"Notification"}
                         DialogDescription={"See notifications here"}
                         className={"mb-10"}></DialogueBox>
-
-                    <SpeakerIcon></SpeakerIcon>
-                    <h1 className={"text-xl text-gray-400"}>Aditya Patil <span>admin</span></h1>
+                    <h1 className={" text-xl text-gray-600"}>Aditya Patil <span className={"italic"}>admin</span></h1>
                 </div>
             </div>
         </div>

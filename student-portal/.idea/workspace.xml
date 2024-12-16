@@ -4,12 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d081950-12f9-4495-a430-2befce2fbd3e" name="Changes" comment="">
+    <list default="true" id="5d081950-12f9-4495-a430-2befce2fbd3e" name="Changes" comment="added pages for teacher classes and parent">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/_components/NavBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_components/NavBar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/users/adduser/page.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/teachers/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/teachers/page.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/calendar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/calendar.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +34,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/adity/OneDrive/Desktop/New folder/StudentPortal2.0/student-portal/src/app/classes",
+    "last_opened_file_path": "C:/Users/adity/OneDrive/Desktop/New folder/StudentPortal2.0/student-portal/src/app/settings",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -44,6 +46,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\adity\OneDrive\Desktop\New folder\StudentPortal2.0\student-portal\src\app\settings" />
+      <recent name="C:\Users\adity\OneDrive\Desktop\New folder\StudentPortal2.0\student-portal\src\app\notes" />
       <recent name="C:\Users\adity\OneDrive\Desktop\New folder\StudentPortal2.0\student-portal\src\app\classes" />
       <recent name="C:\Users\adity\OneDrive\Desktop\New folder\StudentPortal2.0\student-portal\src\app\parents" />
     </key>
@@ -65,10 +69,24 @@
       <updated>1732290501585</updated>
       <workItem from="1732290504047" duration="242000" />
       <workItem from="1734238741989" duration="2932000" />
+      <workItem from="1734312909726" duration="6097000" />
     </task>
+    <task id="LOCAL-00001" summary="added pages for teacher classes and parent">
+      <option name="closed" value="true" />
+      <created>1734312963712</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1734312963712</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="added pages for teacher classes and parent" />
+    <option name="LAST_COMMIT_MESSAGE" value="added pages for teacher classes and parent" />
   </component>
 </project>
