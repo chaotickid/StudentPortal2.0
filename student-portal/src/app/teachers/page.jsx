@@ -13,6 +13,8 @@ import {DeleteIcon, Pencil, ViewIcon} from "lucide-react";
 import DialogueBox from "@/app/_components/DialogueBox";
 import CustomPegination from "@/app/_components/CustomPegination";
 import { LuView } from "react-icons/lu";
+import {Button} from "@/components/ui/button";
+import Link from "next/link";
 
 const Page = () => {
 
@@ -47,11 +49,12 @@ const Page = () => {
     ]
     return (
         <div className={"ml-[15%] px-5"}>
-            <DialogueBox
-                ButtonName={"Add Teacher"}
-                DialogueTitle={"Add Teacher"}
-                DialogDescription={"Please fill out the details below to add a new teacher"}
-                className={"mb-10"}></DialogueBox>
+            <Link href={"/teachers/add-teacher"}><Button variant="outline">Add Teacher</Button> </Link>
+            {/*<DialogueBox*/}
+            {/*    ButtonName={"Add Teacher"}*/}
+            {/*    DialogueTitle={"Add Teacher"}*/}
+            {/*    DialogDescription={"Please fill out the details below to add a new teacher"}*/}
+            {/*    className={"mb-10"}></DialogueBox>*/}
 
             <Table>
                 <TableCaption>A list of teachers.</TableCaption>

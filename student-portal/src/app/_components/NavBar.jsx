@@ -28,6 +28,8 @@ import { RiListSettingsFill } from "react-icons/ri";
 import { LuLogOut } from "react-icons/lu";
 import { SiGooglemessages } from "react-icons/si";
 import { IoIosNotifications } from "react-icons/io";
+import {ThemeToggle} from "@/app/_components/theme-toggle";
+import {Avatar, AvatarFallback, AvatarImage} from "@/components/ui/avatar";
 
 
 
@@ -143,12 +145,13 @@ const NavBar = () => {
                 {otherNavList.map((item, index) => {
                     return (
                         <div key={index} className={"mt-5 text-gray-500"}>
+                            <Link href={item.url}>
                             <div
                                 className={"flex items-center gap-5 cursor-pointer hover:text-gray-900 transition ease-in-out duration-200 mt-5 text-gray-500"}>
                                 <h1 className={"text-3xl"}>{item.icon}</h1>
-                                <DialogueBox icon={<h1>{item.name}</h1>} DialogueTitle={item.dialogueTitle}
-                                             DialogDescription={item.dialogDescription}></DialogueBox>
+                                <h1>{item.name}</h1>
                             </div>
+                            </Link>
 
                         </div>
                     )
@@ -169,7 +172,11 @@ const NavBar = () => {
                         DialogueTitle={"Notification"}
                         DialogDescription={"See notifications here"}
                         className={"mb-10"}></DialogueBox>
-                    <h1 className={" text-xl text-gray-600"}>Aditya Patil <span className={"italic"}>admin</span></h1>
+                    <ThemeToggle />
+                    <Avatar className="h-12 w-12">
+                        <AvatarImage src="/placeholder-avatar.jpg" alt="Student"/>
+                        <AvatarFallback>AP</AvatarFallback>
+                    </Avatar>
                 </div>
             </div>
         </div>
