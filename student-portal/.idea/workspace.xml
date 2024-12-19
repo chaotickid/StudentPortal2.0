@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d081950-12f9-4495-a430-2befce2fbd3e" name="Changes" comment="added pages for teacher classes and parent">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/_components/NavBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_components/NavBar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/profile/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/profile/page.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/teachers/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/teachers/page.jsx" afterDir="false" />
-    </list>
+    <list default="true" id="5d081950-12f9-4495-a430-2befce2fbd3e" name="Changes" comment="added profile and dashboard pages" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -76,7 +67,7 @@
       <workItem from="1734238741989" duration="2932000" />
       <workItem from="1734312909726" duration="6097000" />
       <workItem from="1734401582134" duration="2907000" />
-      <workItem from="1734606936253" duration="4272000" />
+      <workItem from="1734606936253" duration="4897000" />
     </task>
     <task id="LOCAL-00001" summary="added pages for teacher classes and parent">
       <option name="closed" value="true" />
@@ -86,7 +77,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734312963712</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="added profile and dashboard pages">
+      <option name="closed" value="true" />
+      <created>1734615329291</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1734615329291</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -94,6 +93,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added pages for teacher classes and parent" />
-    <option name="LAST_COMMIT_MESSAGE" value="added pages for teacher classes and parent" />
+    <MESSAGE value="added profile and dashboard pages" />
+    <option name="LAST_COMMIT_MESSAGE" value="added profile and dashboard pages" />
   </component>
 </project>
